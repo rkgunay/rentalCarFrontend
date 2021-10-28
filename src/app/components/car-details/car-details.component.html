@@ -1,0 +1,27 @@
+<p>car-details works!</p>
+
+
+<div *ngFor="let car of cars"class="card">
+    <div class="card-header">
+      <b style="color: gray;">Vehicle ID: {{car.id}}</b>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Vehicle Name:  {{car.name}}</h5>
+      <p class="card-text">{{car.description}}</p>
+     
+      <ul class="list-group">
+        <li class="list-group-item ">
+          <div class="card-image d-block" style="text-align: center;">
+            <img style="width: 80%; height: 50%;" class=""src="https://raw.githubusercontent.com/rkgunay/rentalCarsBackend/master/WebAPI/wwwroot/CarImages/{{car.imagePath}}" alt="">
+          </div>
+        </li>
+        <li class="list-group-item">
+            <b>Daily Price:</b> {{car.dailyPrice}} Turkish Liras
+        </li>
+        <li class="list-group-item "><b>Brand:</b> {{car.brandName}}</li>
+        <li class="list-group-item "><b>Color:</b> {{car.colorName}}</li>
+        <li class="list-group-item "><b>Model Year:</b> {{car.modelYear}}</li>
+      </ul>
+      <a href="#" routerLink="" class="btn btn-success mt-2"><b> < </b>RETURN</a>
+    </div>
+  </div>

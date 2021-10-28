@@ -1,8 +1,8 @@
-<div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
+<!-- <div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
     <span class="visually-hidden">Loading...</span>
   </div>
-  <table *ngIf="dataLoaded!=false" class="table table-striped">
-    <thead>
+  <table *ngIf="dataLoaded!=false" class="table table-striped border mt-2">
+    <thead class="table table-primary">
       <tr>
         <th>Car Name</th>
         <th>Brand</th>
@@ -16,7 +16,23 @@
         <td>{{ car.brandName }}</td>
         <td>{{ car.colorName }}</td>
         <td>{{ car.dailyPrice }}</td>
+        <td><img src="https://github.com/rkgunay/rentalCarsBackend/tree/master/WebAPI/wwwroot/{{car.imagePath}}" alt=""></td>
       </tr>
     </tbody>
-  </table>
+  </table> -->
+
+  <div class="row">
+    <div *ngFor="let car of cars"  class="card col-md-3 m-2" style="width: 18rem;">
+      <div class="card-body">
+        <div style="text-align: center;" class="mb-2">
+          <img style="width: 12rem; height: 9rem; border-radius: 10%;"src="https://raw.githubusercontent.com/rkgunay/rentalCarsBackend/master/WebAPI/wwwroot/CarImages/{{car.imagePath}}" class="card-img-top" alt="...">
+        </div>
+        <h5 class="card-title">{{ car.dailyPrice }} TL - <i>Daily</i></h5>
+        <h6 class="card-title"><b style="color:gray;">{{ car.brandName }} - <i>{{car.modelYear}}</i></b></h6>
+        <a 
+        routerLink="/cars/list/{{car.id}}" class="btnbtn-primary">More</a>
+      </div>
+    </div>
+  </div>
+
   
